@@ -1,3 +1,5 @@
+import "./AddTask.css";
+
 export const AddTask = () => {
   return (
     <section className="addTask">
