@@ -47,7 +47,7 @@ setTask({});
           // Added in order to change task title:
           onChange={(e) => setTask({ ...task, name: e.target.value })}
         />
-        <button type="submit">Add</button>
+        <button type="submit">{ task.id ? "Update" : "Add" }</button>
       </form>
     </section>
   );
