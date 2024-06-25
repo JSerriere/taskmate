@@ -17,6 +17,7 @@ const updatedTasklist = tasklist.map((todo) =>
     : todo
 );
 setTasklist(updatedTasklist);
+setTask({});
     } else {
       const date = new Date();
       // console.log(e.target.task.value);
@@ -29,7 +30,7 @@ setTasklist(updatedTasklist);
 
       setTasklist([...tasklist, newTask]);
       // Clear submit field after adding task:
-      e.target.task.value = "";
+      setTask({});
     }
   }
 
@@ -39,7 +40,7 @@ setTasklist(updatedTasklist);
         <input
           type="text"
           name="task"
-          value={task.name}
+          value={task.name || ""}
           autoComplete="off"
           placeholder="New task title"
           maxLength="25"
