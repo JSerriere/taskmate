@@ -1,6 +1,6 @@
 import "./ShowTask.css";
 
-export const ShowTask = () => {
+export const ShowTask = ( {tasklist, setTasklist} ) => {
   const tasks = [
     { id: 10001, name: "Do dishes", time: "6:30:00 PM 6/25/2024" },
     { id: 10002, name: "Do laundry", time: "7:30:00 AM 6/26/2024" },
