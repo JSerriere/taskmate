@@ -1,6 +1,19 @@
 import "./ShowTask.css";
 
-export const ShowTask = ( {tasklist, setTasklist} ) => {
+export const ShowTask = ( {tasklist, setTasklist, task, setTask} ) => {
+
+    const handleDelete = (id) => {
+      const updatedTasklist = tasklist.filter((task) => task.id !== id);
+      setTasklist(updatedTasklist);
+    };
+
+    const handleEdit = (id) => {
+      const selectedTask = tasklist.find(task => task.id === id);
+      setTask(selectedTask);
+    };
+
+
+
 
   return (
     <section className="showTask">
@@ -9,7 +22,9 @@ export const ShowTask = ( {tasklist, setTasklist} ) => {
           <span className="title">Todo</span>
           <span className="count">{tasklist.length}</span>
         </div>
-        <button className="clearAll" onClick={() => setTasklist([])}>Clear All</button>
+        <button className="clearAll" onClick={() => setTasklist([])}>
+          Clear All
+        </button>
       </div>
       <ul>
         {tasklist.map((task) => (
@@ -18,8 +33,14 @@ export const ShowTask = ( {tasklist, setTasklist} ) => {
               <span className="name">{task.name}</span>
               <span className="time">{task.time}</span>
             </p>
-            <i className="bi bi-pencil-square"></i>
-            <i className="bi bi-trash"></i>
+            <i
+              onClick={() => handleEdit(task.id)}
+              className="bi bi-pencil-square"
+            ></i>
+            <i
+              onClick={() => handleDelete(task.id)}
+              className="bi bi-trash"
+            ></i>
           </li>
         ))}
       </ul>
