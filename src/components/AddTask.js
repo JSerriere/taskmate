@@ -1,6 +1,6 @@
 import "./AddTask.css";
 
-export const AddTask = () => {
+export const AddTask = ( {tasklist, setTasklist} ) => {
   return (
     <section className="addTask">
       <form>
