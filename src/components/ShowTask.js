@@ -1,11 +1,6 @@
 import "./ShowTask.css";
 
 export const ShowTask = ( {tasklist, setTasklist} ) => {
-  const tasks = [
-    { id: 10001, name: "Do dishes", time: "6:30:00 PM 6/25/2024" },
-    { id: 10002, name: "Do laundry", time: "7:30:00 AM 6/26/2024" },
-    { id: 10003, name: "Do vacuum cleaning", time: "5:00:00 PM 6/28/2024" },
-  ];
 
   return (
     <section className="showTask">
@@ -17,7 +12,7 @@ export const ShowTask = ( {tasklist, setTasklist} ) => {
         <button className="clearAll">Clear All</button>
       </div>
       <ul>
-        {tasks.map((task) => (
+        {tasklist.map((task) => (
           <li>
             <p>
               <span className="name">{task.name}</span>
